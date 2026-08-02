@@ -15,7 +15,7 @@
 Frontend        -> PWA
                    Preact (React)
                    SQLite [db]
-                   Tauri [Builder]
+                   Tauri [Bundler]
                    Material 3 [UI]
                    PDF.js [report generation]
 Backend         -> Postgresql [db]
@@ -27,6 +27,10 @@ Providers (Dev) -> Netlify (WebApp)
 ### Folder Stucture
 
 ```
+
+PWA  (PWA, vite)
+Test (Unit test)
+
 ```
 
 ### Project Structure
@@ -50,3 +54,20 @@ Providers (Dev) -> Netlify (WebApp)
 - [ ] Test Suite
 - [ ] i18n
 - [ ] User Manual
+
+### Roadmap
+
+- 0.1v
+    - db (sql) ~Conceptual~ and Logical design
+    - db (provider) API details, security constrains, access time etc
+    - pwa (splash) UI
+    - pwa (login) UI, and server side
+    - pwa (register) Logic and security constrains
+
+...
+
+- 1.0v (demo goals)
+    - pwa (ui/ux) Functional Login, Register, Three users, Dashboard, Exports (pdf, xlsx...), Camara (security, location)
+    - db (ui/ux) Physical design, cost per usage estimate etc
+    - tauri (app) working apk, desktop app
+    - docs (manual) basic user manual (maybe build it in the app)
