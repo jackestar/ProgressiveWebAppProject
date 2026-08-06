@@ -15,7 +15,8 @@
     "@tauri-apps/api": "^2",
     "@tauri-apps/plugin-opener": "^2",
     "mdui": "^2.1.5",
-    "preact": "^10.25.1"
+    "preact": "^10.25.1",
+    "preact-router": "^4.1.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.9.3",
