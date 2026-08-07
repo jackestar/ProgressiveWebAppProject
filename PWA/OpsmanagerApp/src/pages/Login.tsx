@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <main class="center-container">
-      <h1 class="main-title">Servinova</h1>
+      <h1 class="main-title">{import.meta.env.VITE_BUSINESS_NAME}</h1>
       <mdui-card variant="elevated" class="box">
         <h2 class="main-title">Login</h2>
         <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
@@ -60,7 +60,7 @@ export default function Login() {
             <mdui-icon-key slot="icon"></mdui-icon-key>
           </mdui-text-field>
 
-          {errorMsg && <div style={{ color: 'red', fontSize: '14px' }}>{errorMsg}</div>}
+          {errorMsg && <div class="error-message">{errorMsg}</div>}
 
           <mdui-button type="submit" variant="outlined" class="login-button" loading={loading ? true : undefined}>
             {loading ? 'Signing in...' : 'Login'}

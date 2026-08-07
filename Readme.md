@@ -1,5 +1,6 @@
 <div align="center">
-<h3>Servinova Proyects</h3>
+<h3>Field Operations Manager Proyects</h3>
+<spam>opsmanager</spam>
 <!-- <img src="icon.png" width="100" alt="logo" title="icon"/> -->
 </div>
 
@@ -13,7 +14,7 @@
 
 ```
 Frontend        -> PWA
-                   Preact (React)
+                   Preact (React/SPA)
                    Tauri [Bundler]
                    Material 3 [UI]
                    PDF.js [report generation]

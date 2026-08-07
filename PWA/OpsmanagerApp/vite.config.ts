@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
 import { VitePWA } from 'vite-plugin-pwa';
 
@@ -6,14 +6,16 @@ import { VitePWA } from 'vite-plugin-pwa';
 const host = process.env.TAURI_DEV_HOST;
 
 // https://vite.dev/config/
-export default defineConfig(async () => ({
+export default defineConfig(async ({mode}) => {
+  const env = loadEnv(mode, process.cwd(), '')
+return {
   plugins: [
     preact(),
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'ServinovaApp',
-        short_name: 'ServiApp',
+        name: env.VITE_BUSINESS_APP_NAME,
+        short_name: env.VITE_BUSINESS_APP_NAME_SHORT,
         theme_color: '#fff0f0',
         icons: [
           // Add your PWA icon definitions here
@@ -43,4 +45,7 @@ export default defineConfig(async () => ({
       ignored: ["**/src-tauri/**"],
     },
   },
-}));
+}
+}
+  
+  );
