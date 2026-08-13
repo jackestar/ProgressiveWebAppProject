@@ -1,12 +1,10 @@
 <div align="center">
-<h3>Field Operations Manager Proyects</h3>
+<h3>Field Operations Manager Projects</h3>
 <spam>opsmanager</spam>
 <!-- <img src="icon.png" width="100" alt="logo" title="icon"/> -->
 </div>
 
 ---
-
-
 
 ### Overview
 
