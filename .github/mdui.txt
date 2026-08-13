@@ -1,0 +1,92 @@
+# mdui v2 Documentation
+
+mdui is an front-end component library based on Material Design 3, using Web Components, supporting dynamic colors, dark mode, and lightweight efficiency.
+
+## Getting Started
+
+- [Introduction](https://www.mdui.org/en/docs/2/index.md): mdui is a premium Web Components library with 50+ Material Design components. Supports dark mode, localization, and TypeScript. Build modern web apps easily with mdui.
+- [Installation](https://www.mdui.org/en/docs/2/getting-started/installation.md): Install mdui via npm, pnpm, or CDN. Supports full and on-demand imports to reduce bundle size. Detailed guides for global and ES module builds ensure easy integration.
+- [Usage](https://www.mdui.org/en/docs/2/getting-started/usage.md): Based on Web Components, mdui details the use of attributes, properties, methods, events, and slots. Master component updates and Shadow DOM styling with our guides.
+- [TypeScript Support](https://www.mdui.org/en/docs/2/getting-started/typescript-support.md): Written in TypeScript, mdui provides full type definitions for all components. Enjoy autocompletion and type checking to improve development efficiency and code quality.
+- [IDE Support](https://www.mdui.org/en/docs/2/getting-started/ide-support.md): Optimized for VS Code and WebStorm. Get code completion and hover hints via npm or extensions. Full HTML and CSS data support significantly boosts development speed.
+- [Localization](https://www.mdui.org/en/docs/2/getting-started/localization.md): Built-in multi-language support with 50+ locale packs. Supports lazy loading, pre-loading, and static imports via CDN or npm. Build global apps with localization events.
+- [Frequently Asked Questions](https://www.mdui.org/en/docs/2/getting-started/faq.md): FAQ from the mdui community with official answers. Solutions for self-closing tags, FOUC prevention, and more. Troubleshooting tips and code examples are provided.
+
+## AI-Assisted Development
+
+- [LLMs.txt](https://www.mdui.org/en/docs/2/ai/llms.md): mdui provides llms.txt and llms-full.txt to offer accurate context for LLMs. Markdown docs support direct pasting or uploading, improving AI answer accuracy and speed.
+- [MCP Server](https://www.mdui.org/en/docs/2/ai/mcp.md): @mdui/mcp integrates MCP servers for AI agents. Query attributes, Material Icons, and CSS custom properties directly to enhance the depth of the AI coding experience.
+
+## Styles
+
+- [Dark Mode](https://www.mdui.org/en/docs/2/styles/dark-mode.md): All components feature built-in Dark Mode support. Toggled via system preferences or manually with setTheme. Supports global or scoped theme overrides for any app.
+- [Dynamic Color](https://www.mdui.org/en/docs/2/styles/dynamic-color.md): Automatically generate full light and dark palettes from a base color or image. Use setColorScheme and getColorFromImage to create personalized, harmonious themes.
+- [Typography](https://www.mdui.org/en/docs/2/styles/prose.md): mdui-prose and mdui-table utility classes optimize article and table layouts. Get elegant typography and spacing effortlessly for any dynamic or Markdown content.
+- [Design Tokens](https://www.mdui.org/en/docs/2/styles/design-tokens.md): Design Tokens system implemented via CSS Custom Properties. Includes 100+ tokens for colors, corners, and more. Customize these to create a unique yet unified look.
+
+## Integration with Frameworks
+
+- [Integrate with React](https://www.mdui.org/en/docs/2/frameworks/react.md): Based on Web Components, mdui integrates seamlessly with React. Features full TypeScript support for event binding and property syncing with best practices guides.
+- [Integrate with Vue](https://www.mdui.org/en/docs/2/frameworks/vue.md): Simple Vue integration with template compiler configuration. Features v-model support, custom event listening, full TypeScript types, and IDE intelligent hints.
+- [Integrate with Angular](https://www.mdui.org/en/docs/2/frameworks/angular.md): Requires CUSTOM_ELEMENTS_SCHEMA for Angular. Offers detailed integration guides and examples. Supports DI, two-way binding, and full TypeScript type definitions.
+- [Integrate with Other Frameworks](https://www.mdui.org/en/docs/2/frameworks/others.md): Built on standard Web Components, mdui integrates with any modern framework like Svelte, Next.js, or Nuxt. Provides best practices and universal integration guides.
+
+## Components
+
+- [Avatar Component](https://www.mdui.org/en/docs/2/components/avatar.md): Avatar represents users or brands with images, icons, or text. Supports circular or square shapes with various sizes. Ideal for profiles, comments, and cards.
+- [Badge Component](https://www.mdui.org/en/docs/2/components/badge.md): Badge displays counts or status labels. Supports small and large sizes with numbers or text. Effortlessly attaches to components for notifications and indicators.
+- [Bottom App Bar Component](https://www.mdui.org/en/docs/2/components/bottom-app-bar.md): Bottom App Bar provides mobile navigation and action bars at the bottom. Integrates Fab, items, and menus. Supports scroll-hide, fixed positions, and custom styles.
+- [Button Component](https://www.mdui.org/en/docs/2/components/button.md): Button supports elevated, filled, tonal, outlined, and text styles. Features icons, loading states, and full accessibility based on the Material Design 3 guidelines.
+- [Icon Button Component](https://www.mdui.org/en/docs/2/components/button-icon.md): Icon Button for secondary actions supports standard, filled, tonal, and outlined styles. Includes loading states and link support. Perfect for toolbars and card headers.
+- [Card Component](https://www.mdui.org/en/docs/2/components/card.md): Card is a versatile container for related content and actions. Supports elevated, filled, and outlined styles with clickable, link, and media support for any UI.
+- [Checkbox Component](https://www.mdui.org/en/docs/2/components/checkbox.md): Checkbox allows users to select multiple options. Supports checked, unchecked, and indeterminate states. Features custom icons, validation, and full form support.
+- [Chip Component](https://www.mdui.org/en/docs/2/components/chip.md): Chip represents input, selection, or filtering. Includes assist, filter, input, and suggestion variants with checkable and removable states. Ideal for categorization.
+- [Circular Progress Component](https://www.mdui.org/en/docs/2/components/circular-progress.md): Circular Progress displays completion with circular bars. Supports determinate and spinner modes. Custom sizes and colors for buttons, loading, or page refreshes.
+- [Collapse Component](https://www.mdui.org/en/docs/2/components/collapse.md): Collapse organizes content into grouped sections to save space. Features accordion mode, custom triggers, and animations. Ideal for FAQ and complex settings pages.
+- [Dialog Component](https://www.mdui.org/en/docs/2/components/dialog.md): Dialog for important info or decisions. Supports titles, icons, and buttons with modal or full-screen modes. Provides alert, confirm, and prompt functions.
+- [Divider Component](https://www.mdui.org/en/docs/2/components/divider.md): Divider provides visual separation for lists and layouts. Supports horizontal and vertical modes with custom insets. A basic tool for clear interface hierarchy.
+- [Dropdown Component](https://www.mdui.org/en/docs/2/components/dropdown.md): Dropdown triggers menus or content at the click or cursor position. Features multiple trigger modes, auto-positioning, and delays for rich user interactions.
+- [Floating Action Button Component](https://www.mdui.org/en/docs/2/components/fab.md): Floating Action Button highlights primary actions in regular or extended forms and three sizes. Features icons, colors, and loading states for quick access to features.
+- [Icon Component](https://www.mdui.org/en/docs/2/components/icon.md): Icon represents actions with Material Icons or custom SVGs. Customize size, color, and rotation via CSS. Enhances UI recognition when used in buttons and menus.
+- [Layout Component](https://www.mdui.org/en/docs/2/components/layout.md): Layout organizes app bars, drawers, and content areas. Features a responsive grid system with custom breakpoints and spacing to build complete page frameworks.
+- [Linear Progress Component](https://www.mdui.org/en/docs/2/components/linear-progress.md): Linear Progress displays task progress with horizontal bars. Supports determinate and indeterminate modes. Custom colors and heights for any loading or upload UI.
+- [List Component](https://www.mdui.org/en/docs/2/components/list.md): List displays vertical items for navigation or contacts. Supports single, double, or triple lines with avatars, icons, and links. Customizable layout and content.
+- [Menu Component](https://www.mdui.org/en/docs/2/components/menu.md): Menu displays vertical operation options. Supports selection modes, submenus, shortcuts, and custom content. Perfect for context menus and navigation navigation.
+- [Navigation Bar Component](https://www.mdui.org/en/docs/2/components/navigation-bar.md): Navigation Bar for switching between main pages on mobile. Supports 3-5 items with auto-labels, icons, and badges. Features scroll-hide and custom container modes.
+- [Navigation Drawer Component](https://www.mdui.org/en/docs/2/components/navigation-drawer.md): Navigation Drawer slides from the side for navigation. Supports modal/non-modal modes for left or right sides. Features user info, lists, and dividers for any app.
+- [Navigation Rail Component](https://www.mdui.org/en/docs/2/components/navigation-rail.md): Navigation Rail provides compact side navigation for tablets and desktops. Supports badges, dividers, and custom alignment. Displays icons with optional labels.
+- [Radio Component](https://www.mdui.org/en/docs/2/components/radio.md): Radio buttons for mutually exclusive selections. Ensures only one option is chosen at a time. Supports custom icons and disabled states for forms and surveys.
+- [Range Slider Component](https://www.mdui.org/en/docs/2/components/range-slider.md): Range Slider lets users select a range with dual thumbs. Features discrete steps, custom labels, and validation. Widely used for price, time, or parameter ranges.
+- [Select Component](https://www.mdui.org/en/docs/2/components/select.md): Select allows single or multi-selection from a dropdown. Features labels, validation, and custom icons. Ideal for logic, data entry, and complex filtering needs.
+- [Segmented Button Component](https://www.mdui.org/en/docs/2/components/segmented-button.md): Segmented Button supports single or multi-select for filtering or switching views. Features icons, links, and custom styles. A core component for building UI controls.
+- [Slider Component](https://www.mdui.org/en/docs/2/components/slider.md): Slider allows value selection with step control and tick marks. Features validation, auto-focus, and custom labels. Ideal for volume, brightness, or range filtering.
+- [Snackbar Component](https://www.mdui.org/en/docs/2/components/snackbar.md): Snackbar provides brief feedback with action buttons and auto-dismissal. Supports custom colors, positions, and programmatic calls for a better user experience.
+- [Switch Component](https://www.mdui.org/en/docs/2/components/switch.md): Switch toggles binary settings with instant feedback. Supports custom icons, colors, and sizes. Perfect for settings pages, permissions, and preference management.
+- [Tabs Component](https://www.mdui.org/en/docs/2/components/tabs.md): Tabs switch between multiple views in one area. Supports primary and secondary styles with icons, badges, and custom indicators. Ideal for category navigation.
+- [Text Field Component](https://www.mdui.org/en/docs/2/components/text-field.md): Text Field supports single/multi-line input for passwords, emails, and more. Features labels, icons, and validation. Fully accessible with auto-height support.
+- [Tooltip Component](https://www.mdui.org/en/docs/2/components/tooltip.md): Tooltip shows supplementary info on hover or focus. Supports rich text, custom placement, and adjustable delays. Helps users understand functions and features.
+- [Top App Bar Component](https://www.mdui.org/en/docs/2/components/top-app-bar.md): Top App Bar provides titles, navigation, and actions at the top. Features multiple styles, scroll effects, and custom buttons. A unified header for app navigation.
+
+## Functions
+
+- [JavaScript Library](https://www.mdui.org/en/docs/2/functions/jq.md): Built-in tiny jq library with a jQuery-like API at one-sixth the size. Supports chainable DOM, events, and animations without external dependencies or overhead.
+- [dialog Function](https://www.mdui.org/en/docs/2/functions/dialog.md): Programmatic wrapper for mdui-dialog. Open modals from JavaScript without HTML. Supports custom titles, buttons, and returns a Promise for user interactions.
+- [alert Function](https://www.mdui.org/en/docs/2/functions/alert.md): A modern replacement for window.alert based on mdui-dialog. Show themed alert dialogs with custom titles and buttons without blocking the page rendering process.
+- [confirm Function](https://www.mdui.org/en/docs/2/functions/confirm.md): Material Design replacement for window.confirm. Show programmatic confirm dialogs and handle user choices through a simple Promise for better control and style.
+- [prompt Function](https://www.mdui.org/en/docs/2/functions/prompt.md): Replacement for window.prompt with Material Design style. Captures user input via dialogs with validation and custom types. Returns a Promise with the input value.
+- [snackbar Function](https://www.mdui.org/en/docs/2/functions/snackbar.md): Programmatic call for mdui-snackbar. Quickly show feedback messages with custom actions, duration, and placement. No HTML required for instant notifications.
+- [getTheme Function](https://www.mdui.org/en/docs/2/functions/getTheme.md): Retrieve theme settings for the page or elements. Supports light, dark, and auto modes. Useful for adjusting logic or styles based on the user's active theme.
+- [setTheme Function](https://www.mdui.org/en/docs/2/functions/setTheme.md): Dynamically set light, dark, or auto themes for the page or specific elements. Supports global or scoped theme overrides for a flexible and modern experience.
+- [getColorFromImage Function](https://www.mdui.org/en/docs/2/functions/getColorFromImage.md): Extract dominant colors from images as hex values. Pairs with setColorScheme to generate harmonious palettes that match your content automatically and dynamically.
+- [setColorScheme Function](https://www.mdui.org/en/docs/2/functions/setColorScheme.md): Generate full Material Design palettes from a single hex color. Supports global or local settings for rapid branding and cohesive color scheme customization.
+- [removeColorScheme Function](https://www.mdui.org/en/docs/2/functions/removeColorScheme.md): Remove custom color schemes to restore the default palette. Can be applied globally or to specific elements, making it ideal for theme resets and toggling modes.
+- [loadLocale Function](https://www.mdui.org/en/docs/2/functions/loadLocale.md): Load locale packs for app localization. Supports lazy, pre-load, and static methods for over 50 languages. Optimized for better performance and on-demand loading.
+- [setLocale Function](https://www.mdui.org/en/docs/2/functions/setLocale.md): Set application language codes dynamically with async support. Automatically triggers component updates for seamless localization without reloading the page.
+- [getLocale Function](https://www.mdui.org/en/docs/2/functions/getLocale.md): Retrieve the current application language code. Use it for environment detection, asset loading, or layout adjustments. Returns simple language code strings.
+- [throttle Function](https://www.mdui.org/en/docs/2/functions/throttle.md): Create throttle functions to limit execution frequency. Ideal for high-frequency events like scroll or resize, significantly boosting overall app performance.
+- [observeResize Function](https://www.mdui.org/en/docs/2/functions/observeResize.md): Monitor element size changes using the ResizeObserver API. Triggers callbacks for responsive layouts or adaptive containers. Includes simple cleanup support.
+- [breakpoint Function](https://www.mdui.org/en/docs/2/functions/breakpoint.md): Check current responsive Breakpoints like xs, sm, md, lg, xl, or xxl. Evaluate if width is greater, smaller, or within a range for custom responsive UI logic.
+
+## Libraries
+
+- [@mdui/icons](https://www.mdui.org/en/docs/2/libraries/icons.md): Standalone Material Icons library containing all Google icons. Optimized for tree-shaking and on-demand imports to significantly reduce project bundle sizes.
