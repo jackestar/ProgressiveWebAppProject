@@ -2,7 +2,7 @@
 name = "opsmanagerapp"
 version = "0.1.0"
 description = "Field Operations Manager App"
-authors = ["jackestar","pdrosam"]
+authors = ["jackestar", "pdrosam"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

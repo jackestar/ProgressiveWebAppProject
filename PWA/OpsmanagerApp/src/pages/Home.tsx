@@ -1,4 +1,4 @@
-import { h } from 'preact';
+// import { h } from 'preact';
 import { route } from 'preact-router';
 import { supabase } from '../lib/supabase';
 
