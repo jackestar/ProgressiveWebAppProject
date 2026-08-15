@@ -1,7 +1,7 @@
 [build]
-  base = "ProgressiveWebAppProject/PWA/OpsmanagerApp"
+  base = "PWA/OpsmanagerApp"
   publish = "dist"
-  command = "VITE_SUPABASE_URL=$SUPABASE_URL VITE_SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY pnpm run build"
+  command = "pnpm run build"
 
 [[redirects]]
   from = "/*"
