@@ -1,11 +1,10 @@
 <div align="center">
-<h3>Servinova Proyects</h3>
+<h3>Field Operations Manager Projects</h3>
+<spam>opsmanager</spam>
 <!-- <img src="icon.png" width="100" alt="logo" title="icon"/> -->
 </div>
 
 ---
-
-
 
 ### Overview
 
@@ -13,8 +12,7 @@
 
 ```
 Frontend        -> PWA
-                   Preact (React)
-                   SQLite [db]
+                   Preact (React/SPA)
                    Tauri [Bundler]
                    Material 3 [UI]
                    PDF.js [report generation]
@@ -67,7 +65,7 @@ Test (Unit test)
 ...
 
 - 1.0v (demo goals)
-    - pwa (ui/ux) Functional Login, Register, Three users, Dashboard, Exports (pdf, xlsx...), Camara (security, location)
+    - pwa (ui/ux) Functional Login, Register, Three users, Dashboard, Exports (pdf, xlsx...), Camera (security, location)...
     - db (ui/ux) Physical design, cost per usage estimate etc
-    - tauri (app) working apk, desktop app
-    - docs (manual) basic user manual (maybe build it in the app)
+    - tauri (app) working apk, desktop app [maybe]
+    - docs (manual) basic user manual (maybe build it in the app) [maybe]
