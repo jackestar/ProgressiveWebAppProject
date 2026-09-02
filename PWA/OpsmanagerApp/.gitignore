@@ -31,5 +31,5 @@ coverage/
 
 # CI/CD
 
-./public
-./src-tauri/icons
+public/
+src-tauri/icons/
