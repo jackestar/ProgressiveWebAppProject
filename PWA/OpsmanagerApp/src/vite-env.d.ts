@@ -9,6 +9,9 @@ declare module "preact" {
       "mdui-text-field": any;
       "mdui-navigation-bar-item": any;
       "mdui-navigation-bar": any;
+      "mdui-badge": any;
+      "mdui-circular-progress": any;
+      "mdui-avatar": any;
     }
   }
 }
