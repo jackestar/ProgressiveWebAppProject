@@ -3,8 +3,6 @@ import { useState } from 'preact/hooks';
 import "../App.css";
 import "mdui/components/card.js";
 import "mdui/components/text-field.js";
-// import "@mdui/icons/person.js";
-// import "@mdui/icons/key.js";
 import { supabase } from '../lib/supabase';
 
 export default function Login() {
