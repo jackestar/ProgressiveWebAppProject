@@ -1,7 +1,16 @@
 [build]
   base = "PWA/OpsmanagerApp"
   publish = "dist"
-  command = "pnpm run build"
+  command = "bash -lc '../../scripts/tauri-icons.sh ../../favicon.svg && pnpm run build'"
+  # Ignore builds for specific blacklisted branches.
+  # ignore = "bash -lc 'case \"$BRANCH\" in (feature-docs) echo true;; *) echo false;; esac'"
+
+# Deploy preview and branch-deploy contexts use the same pre-build step.
+[context.deploy-preview]
+  command = "bash -lc '../../scripts/tauri-icons.sh ../../favicon.svg && pnpm run build'"
+
+[context.branch-deploy]
+  command = "bash -lc '../../scripts/tauri-icons.sh ../../favicon.svg && pnpm run build'"
 
 [[redirects]]
   from = "/*"
