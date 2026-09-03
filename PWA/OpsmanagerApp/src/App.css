@@ -17,10 +17,8 @@ body {
 
 .contain-container {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   z-index: 0;
-  /* min-height: 100vh; */
   padding: 1.5em;
   box-sizing: border-box;
   justify-content: center;
@@ -76,4 +74,12 @@ form .error-message {
   word-break: break-word;
   overflow-wrap: anywhere;
   white-space: normal;
+}
+
+.user-box {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap:.3em;
 }
