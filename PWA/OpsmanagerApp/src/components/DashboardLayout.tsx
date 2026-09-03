@@ -10,8 +10,6 @@ interface NavItem {
 }
 
 interface Props {
-  userName: string;
-  role: string;
   title: string;
   activeTab: string;
   onTabChange: (value: string) => void;
@@ -19,9 +17,8 @@ interface Props {
   children: ComponentChildren;
 }
 
-export default function DashboardLayout({ userName, role, title, activeTab, onTabChange, navItems, children }: Props) {
+export default function DashboardLayout({ title, activeTab, onTabChange, navItems, children }: Props) {
   // Capitalize the first letter of the role
-  const capitalizedRole = role.charAt(0).toUpperCase() + role.slice(1);
 
   return (
     <main class="contain-container">

@@ -1,5 +1,5 @@
 import 'mdui/mdui.css';
-import '@material-design-icons/font';
+import '@material-design-icons/font/filled.css';
 import 'mdui';
 import { setColorScheme } from 'mdui/functions/setColorScheme.js';
 

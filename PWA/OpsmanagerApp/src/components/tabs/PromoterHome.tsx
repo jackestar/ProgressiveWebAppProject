@@ -6,7 +6,7 @@ interface Props {
   role: string;
 }
 
-export default function PromotorHome({ userName, role }: Props) {
+export default function PromoterHome({ userName, role }: Props) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <HomeUserBox userName={userName} role={role} />

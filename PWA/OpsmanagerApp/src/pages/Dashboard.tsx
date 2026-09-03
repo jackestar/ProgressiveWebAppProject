@@ -6,9 +6,9 @@ import { supabase } from '../lib/supabase';
 // Import the role-specific dashboards
 import AdminDashboard from '../components/AdminDashboard';
 import MerchantDashboard from '../components/MerchantDashboard';
-import PromotorDashboard from '../components/PromotorDashboard';
+import PromoterDashboard from '../components/PromoterDashboard';
 
-type UserRole = 'merchant' | 'promotor' | 'administrator' | null;
+type UserRole = 'merchant' | 'promoter' | 'administrator' | null;
 
 export default function Dashboard() {
   const [role, setRole] = useState<UserRole>(null);
@@ -48,7 +48,7 @@ export default function Dashboard() {
   // Render the correct dashboard based on role
   if (role === 'administrator') return <AdminDashboard userName={firstName} />;
   if (role === 'merchant') return <MerchantDashboard userName={firstName} />;
-  if (role === 'promotor') return <PromotorDashboard userName={firstName} />;
+  if (role === 'promoter') return <PromoterDashboard userName={firstName} />;
 
   // Fallback if role is unknown or missing
   return <div style={{ padding: '24px' }}>Error: Role not assigned. Contact administrator.</div>;

@@ -22,8 +22,6 @@ export default function MerchantDashboard({ userName }: Props) {
 
   return (
     <DashboardLayout
-      userName={userName}
-      role="merchant"
       title="Merchant Panel"
       activeTab={activeTab}
       onTabChange={setActiveTab}

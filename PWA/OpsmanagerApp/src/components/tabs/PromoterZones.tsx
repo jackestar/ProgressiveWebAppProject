@@ -1,4 +1,4 @@
-export default function PromotorZones() {
+export default function PromoterZones() {
   return (
     <div>
       <h3>Historial de Zonas</h3>
