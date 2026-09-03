@@ -3,8 +3,6 @@ import { useState } from 'preact/hooks';
 import "../App.css";
 import "mdui/components/card.js";
 import "mdui/components/text-field.js";
-import "@mdui/icons/person.js";
-import "@mdui/icons/key.js";
 import { supabase } from '../lib/supabase';
 
 export default function Login() {
@@ -27,7 +25,7 @@ export default function Login() {
       setErrorMsg(error.message);
       setLoading(false);
     } else {
-      route('/');
+      route('/dashboard');
     }
   };
 
@@ -38,6 +36,7 @@ export default function Login() {
         <h2 class="main-title">Login</h2>
         <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
           <mdui-text-field
+            icon="person"
             variant="outlined"
             label="Email"
             type="email"
@@ -45,10 +44,10 @@ export default function Login() {
             onInput={(e: any) => setEmail(e.target.value)}
             required
           >
-            <mdui-icon-person slot="icon"></mdui-icon-person>
           </mdui-text-field>
 
           <mdui-text-field
+            icon="key"
             variant="outlined"
             label="Password"
             type="password"
@@ -57,7 +56,6 @@ export default function Login() {
             required
             toggle-password
           >
-            <mdui-icon-key slot="icon"></mdui-icon-key>
           </mdui-text-field>
 
           {errorMsg && <div class="error-message">{errorMsg}</div>}
