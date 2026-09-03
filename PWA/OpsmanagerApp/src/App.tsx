@@ -5,38 +5,62 @@ import "./App.css";
 import { supabase } from './lib/supabase';
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
-// import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const [sessionChecked, setSessionChecked] = useState(false);
 
   useEffect(() => {
-    // Check the current session on first load
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) {
-        route('/login',true); // Replace history state so they can't hit "Back"
+    let active = true;
+
+    const finishCheck = () => {
+      if (active) {
+        setSessionChecked(true);
       }
-      setSessionChecked(true);
-    });
+    };
+
+    // Check the current session on first load
+    supabase.auth.getSession()
+      .then(({ data: { session } }) => {
+        if (!active) return;
+
+        if (!session && window.location.pathname !== '/login' && window.location.pathname !== '/') {
+          route('/login', true); // Replace history state so they can't hit "Back"
+        }
+
+        finishCheck();
+      })
+      .catch(() => {
+        finishCheck();
+      });
 
     // Listen for authentication state changes (e.g., token expires, or user logs out)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) {
-        route('/login',true);
+      if (!session && window.location.pathname !== '/login' && window.location.pathname !== '/') {
+        route('/login', true);
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      active = false;
+      subscription.unsubscribe();
+    };
   }, []);
 
-  // Don't render the Router until we know the auth state to prevent UI flashing
+  // Render a lightweight loading state instead of an empty root while the auth check resolves.
   if (!sessionChecked) {
-    return ;
+    return (
+      <main class="center-container">
+        <h1 class="main-title">Loading...</h1>
+      </main>
+    );
   }
+
   return (
     <Router>
       <Route path="/" component={Welcome} />
       <Route path="/login" component={Login} />
+      <Route path="/dashboard" component={Dashboard} />
     </Router>
   );
 }
