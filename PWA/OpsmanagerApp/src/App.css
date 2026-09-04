@@ -110,3 +110,10 @@ form .error-message {
   grid-row: 1 / span 2;
   justify-self: end;
 }
+
+.user-box > mdui-divider {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+  width: 100%;
+  margin:1em 0;
+}

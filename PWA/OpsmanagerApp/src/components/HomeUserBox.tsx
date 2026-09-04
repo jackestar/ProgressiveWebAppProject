@@ -38,7 +38,7 @@ export default function HomeUserBox({ userName, role }: Props) {
       >
         Logout
       </mdui-button>
-      {/* <mdui-divider></mdui-divider> */}
+      <mdui-divider></mdui-divider>
     </div>
   );
 }
