@@ -1,4 +1,4 @@
-export default function PromotorSales() {
+export default function PromoterSales() {
   return (
     <div>
       <h3>Historial de Ventas</h3>

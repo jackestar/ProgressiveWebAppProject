@@ -2,15 +2,15 @@ import { useState } from 'preact/hooks';
 import DashboardLayout from './DashboardLayout';
 
 // Import the tab components
-import PromotorHome from './tabs/PromotorHome';
-import PromotorSales from './tabs/PromotorSales';
-import PromotorZones from './tabs/PromotorZones';
+import PromoterHome from './tabs/PromoterHome';
+import PromoterSales from './tabs/PromoterSales';
+import PromoterZones from './tabs/PromoterZones';
 
 interface Props {
   userName: string;
 }
 
-export default function PromotorDashboard({ userName }: Props) {
+export default function PromoterDashboard({ userName }: Props) {
   // State to track which tab is currently selected
   const [activeTab, setActiveTab] = useState('home');
 
@@ -23,17 +23,14 @@ export default function PromotorDashboard({ userName }: Props) {
 
   return (
     <DashboardLayout
-      userName={userName}
-      role="promotor"
-      title="Promotor Panel"
       activeTab={activeTab}
       onTabChange={setActiveTab}
       navItems={navItems}
     >
       {/* Conditional Rendering: Only show the component that matches activeTab */}
-      {activeTab === 'home' && <PromotorHome userName={userName} role="promotor" />}
-      {activeTab === 'sales' && <PromotorSales />}
-      {activeTab === 'zones' && <PromotorZones />}
+      {activeTab === 'home' && <PromoterHome userName={userName} role="promoter" />}
+      {activeTab === 'sales' && <PromoterSales />}
+      {activeTab === 'zones' && <PromoterZones />}
     </DashboardLayout>
   );
 }
