@@ -1,13 +1,13 @@
 [build]
   base = "PWA/OpsmanagerApp"
   publish = "dist"
-  command = "node generate-icons.js && pnpm run build"
+  command = "pnpm run icons --only-pwa && pnpm run build"
 
 [context.deploy-preview]
-  command = "node generate-icons.js && pnpm run build"
+  command = "pnpm run icons --only-pwa && pnpm run build"
 
 [context.branch-deploy]
-  command = "node generate-icons.js && pnpm run build"
+  command = "pnpm run icons --only-pwa && pnpm run build"
 
 [[redirects]]
   from = "/*"
