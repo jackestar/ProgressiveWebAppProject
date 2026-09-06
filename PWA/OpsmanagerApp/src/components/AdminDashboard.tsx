@@ -13,9 +13,9 @@ export default function AdminDashboard({ userName }: Props) {
   const [activeTab, setActiveTab] = useState('home');
 
   const navItems = [
-    { value: 'home', icon: 'home', label: 'Inicio' },
-    { value: 'reports', icon: 'analytics', label: 'Reportes' },
-    { value: 'users', icon: 'manage_accounts', label: 'Usuarios' }
+    { value: 'home', icon: 'home', label: 'Home' },
+    { value: 'reports', icon: 'analytics', label: 'Reports' },
+    { value: 'users', icon: 'manage_accounts', label: 'Users' }
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function AdminDashboard({ userName }: Props) {
       onTabChange={setActiveTab}
       navItems={navItems}
     >
-      {activeTab === 'home' && <AdminHome userName={userName} role="administrator" />}
+      {activeTab === 'home' && <AdminHome userName={userName} role="administrator" onTabChange={setActiveTab} />}
       {activeTab === 'reports' && <AdminReports />}
       {activeTab === 'users' && <AdminUsers />}
     </DashboardLayout>

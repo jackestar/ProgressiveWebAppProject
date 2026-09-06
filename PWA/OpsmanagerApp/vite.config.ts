@@ -13,6 +13,9 @@ export default defineConfig(async ({ mode }) => {
       preact(),
       VitePWA({
         registerType: 'autoUpdate',
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,png,svg,woff2}'],
+        },
         manifest: {
           name: env.VITE_BUSINESS_APP_NAME,
           short_name: env.VITE_BUSINESS_APP_NAME_SHORT,
@@ -23,7 +26,7 @@ export default defineConfig(async ({ mode }) => {
           icons: [
             {
               src: '/favicon.svg',
-              sizes: '48x48 72x72 96x96 128x128 256x256',
+              sizes: 'any',
               type: 'image/svg+xml',
               purpose: 'any'
             },
