@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
+import { Fragment } from 'preact';
 import 'mdui/components/avatar.js';
 import 'mdui/components/badge.js';
 import 'mdui/components/button.js';
@@ -6,6 +7,7 @@ import 'mdui/components/button-icon.js';
 import 'mdui/components/divider.js';
 
 import AdminUserCreation from './AdminUserCreation';
+import AdminUserEdit from './AdminUserEdit';
 import { supabase } from '../../lib/supabase';
 
 interface UserItem {
@@ -20,6 +22,7 @@ export default function AdminUsers() {
   const [users, setUsers] = useState<UserItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
+  const [editingUser, setEditingUser] = useState<UserItem | null>(null);
   const [createFeedbackMsg, setCreateFeedbackMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const reloadUsers = async () => {
@@ -50,16 +53,15 @@ export default function AdminUsers() {
   }, []);
 
   return (
-    <div>
+    <Fragment>
       <div class="list-header" >
-        <h3 style={{ margin: 0 }}>Users</h3>
+        <h3>Users</h3>
         <mdui-button variant="filled" onClick={() => setShowCreate(true)}>Create user</mdui-button>
       </div>
-      {/* <mdui-divider></mdui-divider> */}
 
         {showCreate ? (
             <div class="dialog-panel">
-              <mdui-button variant="outlined" onClick={() => setShowCreate(false)} style={{ marginBottom: '8px' }}>Back to list</mdui-button>
+              <mdui-button variant="outlined" onClick={() => setShowCreate(false)}>Back to list</mdui-button>
               <AdminUserCreation onCreated={(msg) => {
                 setCreateFeedbackMsg(msg);
                 setShowCreate(false);
@@ -69,33 +71,48 @@ export default function AdminUsers() {
             </div>
         ) : null}
 
+        {editingUser ? (
+          <div class="dialog-panel">
+            <mdui-button variant="outlined" onClick={() => setEditingUser(null)}>Back to list</mdui-button>
+            <AdminUserEdit
+              user={editingUser}
+              onUpdated={(msg) => {
+                setCreateFeedbackMsg(msg);
+                setEditingUser(null);
+                reloadUsers();
+              }}
+              onClose={() => setEditingUser(null)}
+            />
+          </div>
+        ) : null}
+
       {createFeedbackMsg && (
         <div class={`feedback-message ${createFeedbackMsg.type === 'error' ? 'error' : 'success'}`}>{createFeedbackMsg.text}</div>
       )}
 
       {loading && <p>Loading users...</p>}
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div class="user-list">
         {users.map((u) => (
           <div class="user-box" key={u.id}>
             <mdui-avatar src="/favicon.svg"></mdui-avatar>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 600 }}>{u.first_name} {u.last_name}</div>
-              <mdui-badge style={{ marginTop: '4px' }}>{u.role.charAt(0).toUpperCase() + u.role.slice(1)}</mdui-badge>
+            <div>
+              <div>{u.first_name} {u.last_name}</div>
+              <mdui-badge>{u.role.charAt(0).toUpperCase() + u.role.slice(1)}</mdui-badge>
             </div>
 
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <mdui-button-icon icon="edit" variant="outlined" onClick={() => console.log('Edit', u.id)}></mdui-button-icon>
+            <div>
+              <mdui-button-icon icon="edit" variant="outlined" onClick={() => setEditingUser(u)}></mdui-button-icon>
               <mdui-button-icon icon="settings" variant="filled" onClick={() => console.log('Manage', u.id)}></mdui-button-icon>
             </div>
-            <mdui-divider middle></mdui-divider>
           </div>
         ))}
 
+
         {!loading && users.length === 0 && (
-          <div style={{ padding: '12px', borderRadius: '6px' }}>No users found.</div>
+          <div>No users found.</div>
         )}
       </div>
-    </div>
+    </Fragment>
   );
 }
