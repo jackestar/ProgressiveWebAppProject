@@ -7,6 +7,7 @@ import 'mdui/components/button-icon.js';
 import 'mdui/components/divider.js';
 
 import PromoterReportCreation from './PromoterReportCreation.tsx';
+import PromoterReportView from './PromoterReportView.tsx';
 import { supabase } from '../../lib/supabase';
 
 interface ReportItem {
@@ -24,6 +25,7 @@ export default function PromoterSales() {
   const [loading, setLoading] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
   const [createFeedbackMsg, setCreateFeedbackMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [selectedReportId, setSelectedReportId] = useState<number | null>(null);
 
   const reloadReports = async () => {
     setLoading(true);
@@ -101,13 +103,17 @@ export default function PromoterSales() {
               <div>
                 <div>{report.stablishment}</div>
                 <div>
-                  {new Date(report.submitted_at).toLocaleDateString()} • {report.zone}
+                  {new Date(report.submitted_at).toLocaleDateString()} • {new Date(report.submitted_at).toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true,
+                  })} • {report.zone}
                 </div>
                 <mdui-badge>{report.clients?.name || 'Unknown Client'}</mdui-badge>
               </div>
 
               <div>
-                <mdui-button-icon icon="visibility" variant="filled" onClick={() => console.log('View report', report.id)}></mdui-button-icon>
+                <mdui-button-icon icon="visibility" variant="filled" onClick={() => setSelectedReportId(report.id)}></mdui-button-icon>
               </div>
             </div>
           ))}
@@ -117,6 +123,11 @@ export default function PromoterSales() {
               No reports found. You haven't submitted any reports yet.
             </div>
           )}
+        </div>
+      )}
+      {selectedReportId && (
+        <div class="dialog-panel">
+          <PromoterReportView reportId={selectedReportId} onClose={() => setSelectedReportId(null)} />
         </div>
       )}
     </Fragment>
